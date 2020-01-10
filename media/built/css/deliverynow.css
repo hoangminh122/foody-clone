@@ -1,0 +1,63 @@
+.container-topbar{
+	background: #333;
+    color: #fff;
+    margin: 0 auto 55px;
+    height: 35px;
+		}
+.container-topbar .topbar{
+	width: 1170px;
+	margin: 0 auto;
+		}
+.topbar a {
+    text-decoration: none;
+    padding: 8px 15px;
+    display: block;
+    color: #fff;
+    float: left;
+	}
+#navbar-fixed{
+	position: fixed;
+	top: 35px;
+	width: 100%;
+	z-index: 999;
+	}
+.dropbox{
+	line-height: 30px !important; 
+	padding: 0 10px !important; 
+	margin-top: 10px !important; 
+	}
+.tab-location{
+	width: 100%;
+	display: block;
+	margin-top: 10px;
+	}
+.tab-category{
+
+}
+.scroll{
+	overflow: scroll;
+	width: 240px;
+    height: 401px;
+    visibility: visible;
+}
+.local-deal{
+	width: 70%
+	
+}
+.local-deal:hover {
+	background: #f7f7f7 !important ;
+}
+.local-deal a{
+	color:black;
+
+}
+.local-deal a:hover {
+    color:red;
+    text-decoration: none;
+}
+.local-deal span{
+	padding-left: 30px;
+	font-size: 12px;
+    color: #707070;
+}
+
