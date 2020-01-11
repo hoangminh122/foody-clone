@@ -5,7 +5,7 @@
          <div class="drop-slide">
              <div class="myslide">  
                 <div class="owl-carousel owl-theme">
-                <div><img src="images/foody1.png"></div>
+                <div><img src="images/foody10.jpg"></div>
                 <div><img src="images/foody2.jpg"></div>
                 <div><img src="images/foody3.jpg"></div>
                 <div><img src="images/foody4.jpg"></div>
@@ -463,7 +463,7 @@
                         <!-- <a href="" class="action">Mới nhất</a>
                         <a href="">Gần tôi</a>
                         <a href="">Đã lưu</a> -->
-                        <img src="images/foody-vn.png" style="background-color: white;margin-bottom: -30px; margin-left: -160px; padding: 2px; ">
+                        <img style="width:11%" src="images/foody-vn1.png" style="background-color: white;margin-bottom: -30px; margin-left: -160px; padding: 2px; ">
                     </div>
                     <div class="menu-right">
                       <select>-Danh mục-

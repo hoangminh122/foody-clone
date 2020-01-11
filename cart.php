@@ -80,10 +80,11 @@
               </div>
               <div class="col-xs-12 col-md-9">
 				<div class="panel panel-primary panel-product ">
-					<div class="panel-heading">GIỎ HÀNG CỦA BẠN</div>
+					<div class="panel-heading" style="color: blue;">GIỎ HÀNG CỦA BẠN</div>
 					<div class="row product_detail">
 						<div class="col-xs-12 col-md-12">
-							<h5 style="float:left">Bạn có 
+							<h5 style="float:left;color:#777">Bạn có 
+							<span style="color:black">
 							<?php 
 							$sosanpham = 0;		              
 		                	if(isset($_SESSION['cart']))
@@ -95,7 +96,8 @@
 		                		{
 		                			echo '0';
 		                		} 
-		                	?> sản phẩm trong giỏ hàng</h5><br/>
+							?> 
+							</span>sản phẩm trong giỏ hàng</h5><br/>
 		                	<form action="cart.php" method="post">
 		                		<?php 
 								if ($sosanpham!=0) {
@@ -103,7 +105,7 @@
 							 	?>
 								<table class="table table-striped table-bordered">
 					              <thead>
-					                <tr>
+					                <tr >
 					                  <th style="text-align: center;">Hình ảnh</th>
 					                  <th style="width: 25%;text-align: left;">Tên sản phẩm</th>
 					                  <th style="width: 10%;">Giá</th>
@@ -144,11 +146,11 @@
 					              	for ($i = 0; $i < count($_SESSION['cart']); $i++){						              		          		              			            
 							              	$sql = 'SELECT * FROM shops WHERE id='.$_SESSION['cart'][$i]['id'];
 							              	foreach ($pdo->query($sql) as $row){
-							              		echo '<tr class="warning style="background: #eee;">';
+							              		echo '<tr style="background: #f8f8f8;border: 1px solid #e6e6e6;" class="warning style="background: #eee;">';
 							              			echo  '<td style="text-align: center;">';
 							              			echo '<img style=" width: 55px;" src="admin/uploads/'.$row['thumbnail'].'" class="img-responsive image_product"  alt="image product">';
 							              			echo '</td>';		              			
-							              			echo '<td style="text-align: left;">'.$row['name'];
+							              			echo '<td style="text-align: left;color:black">'.$row['name'];
 							              			// echo '<br>';
 							              			// echo '<a class="btn" href="cart.php?del='.$row["id"].'">Xóa</a>';
 							              			echo '</td>';		              			
