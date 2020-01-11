@@ -40,7 +40,7 @@
     <div class="header-toolbar">
       <div class="header-wrapper">
         <a href="index.php" class="logo">
-          <img src="images/foody-vn.png" alt="foody.vn">
+          <img style="height: 50px;" src="images/foody-vn1.png" alt="foody.vn">
         </a>
         <div class="root-cate">
           <div class="nav-name">

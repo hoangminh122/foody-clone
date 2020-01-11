@@ -10,7 +10,7 @@ if ( !empty($_POST)) {
 	$name = $_POST['name'];
 	$description = $_POST['description'];
 	$price=$_POST['price'];
-	$thumbnail=uploadFile('thumbnail');
+	$thumbnail=substr(uploadFile('thumbnail'),8);
 	$shop_id = $_POST['shop_id'];
 	
 	// insert data

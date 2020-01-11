@@ -69,7 +69,7 @@
                                             }
                                             echo '<td>'. $row['price'] . '</td>';
                                             if($row['thumbnail']) {
-                                            echo '<td> <img src="'. $row['thumbnail'] .'" style="width:200px;height:200px;"</td>';
+                                            echo '<td> <img src="uploads/'. $row['thumbnail'] .'" style="width:200px;height:200px;"</td>';
                                             }
                                             else {
                                             echo '<td> <img src="../images/update.png" style="width:200px;height:200px;"</td>';

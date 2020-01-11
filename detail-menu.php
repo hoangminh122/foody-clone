@@ -20,12 +20,14 @@ if ($results->num_rows > 0) {
 
 			</div>
 			<div class="name-price">
-				<div class="name"><h1><b><?php echo $product['name'] ?></h1></div>
-				<div class="price">
-					<p><b><?php echo $product['price'] ?><b></p>
+				<div class="name"><h1 style="width: max-content;"><b><?php echo $product['name'] ?></h1></div>
+				<div class="price" style="margin-top: 15px;margin-bottom:15px">
+					<p style="color:#aaa"><b>Giá :<?php echo $product['price'] ?> đ</b></p>
 				</div>
+				<button class="btn btn-primary" style="margin-left: 35%;width: 100%; height: 40px;color: black;background: #0749e8;" ><a style="color: white;" href="cart.php?id=<?php echo $product['id']?>" >Add To Cart</a><button>
 
 			</div>
+
 		</div>
 		<span><i> Description</i> </span>
 		<div class="description">

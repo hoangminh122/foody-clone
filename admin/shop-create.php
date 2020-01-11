@@ -15,7 +15,7 @@ if ( !empty($_POST)) {
 	$phone=$_POST['phone'];
 	$email=$_POST['email'];
 	//$thumbnail=$_POST['thumbnail'];
-	$thumbnail=uploadFile('thumbnail');
+	$thumbnail=substr(uploadFile('thumbnail'),8);
 	
 	// insert data
 	$sql = "INSERT INTO shops (name,address,area,time_open,price_area,phone,email,thumbnail) values('$name', '$address', '$area', '$time_open', '$price_area', '$phone', '$email','$thumbnail')";

@@ -16,7 +16,7 @@ if ( !empty($_POST)) {
 		// output data of each row
 		$user = $results->fetch_array();
 		$_SESSION['userlogged']= $user;
-		header("Location: index.php");
+		header("Location: admin/index.php");
 	} else {
 			$loginSuccess= False;
 		}

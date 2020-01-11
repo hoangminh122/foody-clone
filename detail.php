@@ -283,9 +283,9 @@ if ($results->num_rows > 0) {
 										<img src="images/logo.png" style="height:150px;width:100%;">
 									<?php } ?>
 									<div class="content-img" style="">
-		                                  <div class="name-food">
+		                                  <div class="name-food" style="color:black">
 		                                  	<b><?php echo $row['name'] ?></b></div>
-		                                  <div class="address-store"><?php echo $row['price'] ?></div>
+		                                  <div class="address-store" style="color:#aaa"><?php echo $row['price'] ?> đ</div>
                               		</div>
 								</a>
 							</div>

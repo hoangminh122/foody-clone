@@ -95,26 +95,26 @@
 		                		{
 		                			echo '0';
 		                		} 
-		                	?> sản phẩm trong giỏ hàng</h5>
+		                	?> sản phẩm trong giỏ hàng</h5><br/>
 		                	<form action="cart.php" method="post">
 		                		<?php 
-								if ($sosanpham==0) {
+								if ($sosanpham!=0) {
 																
 							 	?>
 								<table class="table table-striped table-bordered">
 					              <thead>
 					                <tr>
-					                  <th>Hình ảnh</th>
-					                  <th>Tên sản phẩm</th>
-					                  <th>Giá</th>
-					                  <th>Số lượng</th>
+					                  <th style="text-align: center;">Hình ảnh</th>
+					                  <th style="width: 25%;text-align: left;">Tên sản phẩm</th>
+					                  <th style="width: 10%;">Giá</th>
+					                  <th style="width: 7%;">Số lượng</th>
 					                  <th>Tổng cộng</th>			                 
 					                </tr>
 								  </thead>
 								 
 					              <tbody>
 									   <!-- demo -->
-								  <tr class="warning">
+								  <!-- <tr class="warning">
 								  	<td>
 									  <img src="http://localhost:8080/develop/admin/uploads/cach-nau-bun-mam-thom-ngon-khong-khac-gi-ngoai-hang.jpg" class="img-responsive image_product"  alt="image product">
 									</td>
@@ -134,56 +134,62 @@
 										35434535
 								    </td>
 
-								  </tr>
+								  </tr> -->
 								  <!-- end demo -->
 								  
-					              <!-- <?php
+					              <?php
 					              	//require 'admin/database.php';
 					              	$pdo = Database::connect();	
 					              	$total = 0;
 					              	for ($i = 0; $i < count($_SESSION['cart']); $i++){						              		          		              			            
-							              	$sql = 'select * from sanpham  where MaSP ='.$_SESSION['cart'][$i]['id'];
+							              	$sql = 'SELECT * FROM shops WHERE id='.$_SESSION['cart'][$i]['id'];
 							              	foreach ($pdo->query($sql) as $row){
-							              		echo '<tr class="warning">';
-							              			echo  '<td>';
-							              			echo '<img src="images/products/'.$row['HinhAnh'].'" class="img-responsive image_product"  alt="image product">';
+							              		echo '<tr class="warning style="background: #eee;">';
+							              			echo  '<td style="text-align: center;">';
+							              			echo '<img style=" width: 55px;" src="admin/uploads/'.$row['thumbnail'].'" class="img-responsive image_product"  alt="image product">';
 							              			echo '</td>';		              			
-							              			echo '<td>'.$row['TenSP'];
-							              			echo '<br>';
-							              			echo '<a class="btn" href="cart.php?del='.$row["MaSP"].'">Xóa</a>';
+							              			echo '<td style="text-align: left;">'.$row['name'];
+							              			// echo '<br>';
+							              			// echo '<a class="btn" href="cart.php?del='.$row["id"].'">Xóa</a>';
 							              			echo '</td>';		              			
-							              			echo '<td style="text-align: right;">'.number_format($row['Gia']).'đ</td>';		              					              	
-							              			echo '<td width="100px">';
-							              			echo '<input type="text" name="qty['.$i.']" class="form-control" value="'.$_SESSION['cart'][$i]['number'].'">';
+							              			echo '<td style="text-align: center;">'.number_format((int)$row['price_area']).'đ</td>';		              					              	
+							              			echo '<td  >';
+							              			echo '<input style=" width: 70px;text-align: center;" type="text" name="qty['.$i.']" class="form-control" value="'.$_SESSION['cart'][$i]['number'].'">';
 							              			echo '</td>';	
-							              			echo '<td>';
-							              			$money = $row['Gia']*$_SESSION['cart'][$i]['number'];
+							              			echo '<td style="text-align: center;">';
+							              			$money = (int)$row['price_area']*$_SESSION['cart'][$i]['number'];
 							              			$total +=$money;
 							              			echo number_format($money);
-							              			echo 'đ</td>';		              			
+													echo 'đ</td>';
+													echo  '<td>';
+													echo '<a class="btn" href="cart.php?del='.$row["id"].'" style="color: #ccc;">Xóa</a>';
+							              			echo '</td>';  		              			
 							              		echo '</tr>';
 							              	}
 							            
 					              	}
 					              	Database::disconnect();	
-					               ?> -->
+					               ?>
 					              </tbody>
 				            </table>
 						</div>						
-						<div class="col-xs-12 col-md-12">
-							<input type='submit' class="btn btn-success btn_left" name='submit' value='Cập nhật giỏ hàng' />							
+						<div class="col-xs-12 col-md-12" style="float:right;margin-top: 3%;">
+												
 							<div class="info_right">
-								Tổng tiền: <span class="price info_right"><?php echo number_format($total);  ?>đ</span><br>
-								Tổng thanh toán: <span class="price info_right"><?php echo number_format($total);  ?>đ</span> <br>
-								(Đã gồm VAT)
+								<span style="color:#959595">Tổng tiền:</span> <span class="" style="margin-left:50%"><?php echo number_format($total);  ?>đ</span><br>
+								<span style="color:#959595;background:#fbf9d8;font-size: 13px;padding: 4px 10px;" ><span style="color:#f29494">(*) </span>Nhập mã voucher ở bước hoàn tất</span><br/>
+								<span style="color:#959595">Tổng thanh toán:</span> <span class="" style="margin-left:33%"><?php echo number_format($total);  ?>đ</span> <br>
+								<span style="float: right;color: black;">(Đã gồm VAT)</span>
 							</div>
-						</div>						
+							<a style="    padding: 10px;" href="deliverynow.php"><input style="color: white;margin: auto;background: #ae0202;padding: 5px;margin-left: 15%;margin-top: 5%;" type='submit' class="btn btn-success btn_left" name='submit' value='Thực hiện đặt hàng' />		</a>
+						</div>	
+						<div style=" clear: right;"><div>					
 						</form>
 						<div class="col-xs-12 col-md-12">
-							<a href="index.php" class="btn btn-lg btn-warning btn_left">Tiếp tục mua hàng</a>							
-							<div class="info_right">
-								<a href="information.php" class="btn btn-lg btn-warning">Thực hiện đặt hàng</a>
-							</div>
+							<a href="index.php" class="btn btn-lg btn-warning btn_left" style="color:blue">Tiếp tục mua hàng</a>							
+							<!-- <div class="info_right"> -->
+								<!-- <a href="information.php" class="btn btn-lg btn-warning">Thực hiện đặt hàng</a> -->
+							<!-- </div> -->
 							<?php } ?>
 						</div>
 						<?php 
